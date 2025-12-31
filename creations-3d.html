@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créations 3D - Aymeric PIHERY</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/creations-3d.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Aymeric PIHERY</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav.about">Parcours</a></li>
+                <li><a href="dev.html" class="nav-link" data-i18n="nav.dev">Développement</a></li>
+                <li><a href="creations-3d.html" class="nav-link active" data-i18n="nav.creations">Créations 3D</a></li>
+                <li><a href="video.html" class="nav-link" data-i18n="nav.video">Vidéo</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-slider">🌙</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Créations 3D</h1>
+            <p class="page-subtitle">Modélisation, animation et rendu 3D - Art numérique et projets professionnels</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="art">Art</button>
+                <button class="filter-btn" data-filter="professional">Professionnel</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Art Projects -->
+                <div class="portfolio-item" data-category="art">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🎨</span>
+                                <p>Création Artistique</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Tableaux 3D</h3>
+                            <p>Créations artistiques en 3D disponibles sur Displate</p>
+                            <div class="portfolio-links">
+                                <a href="https://displate.com/aymericpihery" target="_blank" class="portfolio-link">Voir sur Displate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="art">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🖼️</span>
+                                <p>Portfolio DeviantArt</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Portfolio Artistique</h3>
+                            <p>Collection de mes créations 3D et rendus artistiques</p>
+                            <div class="portfolio-links">
+                                <a href="https://www.deviantart.com/aymericpihery" target="_blank" class="portfolio-link">Voir sur DeviantArt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Projects -->
+                <div class="portfolio-item" data-category="professional">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🚗</span>
+                                <p>Modèles 3D Voitures</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Modèles 3D Automobiles</h3>
+                            <p>Optimisation et intégration de modèles 3D de voitures pour Ansys (AssetPrep, CarMaker)</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-badge">Blender</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">OBJ/FBX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="professional">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🚁</span>
+                                <p>Simulation Aéronautique</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Environnements VR Aéronautiques</h3>
+                            <p>Modélisation et intégration d'environnements 3D pour simulateurs VR (Airbus H125, NH90)</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">Blender</span>
+                                <span class="tech-badge">VR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="professional">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🚂</span>
+                                <p>Simulation Ferroviaire</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Environnements Ferroviaires</h3>
+                            <p>Création d'environnements 3D avec système de trafic routier pour simulations Alstom</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="professional">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🚁</span>
+                                <p>Simulation Drones</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Interface 3D Simulation IA</h3>
+                            <p>Modélisation d'environnement 3D pour visualisation de simulation d'IA de drones (IRT Saint Exupéry)</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">Blender</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation Projects -->
+                <div class="portfolio-item" data-category="animation">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="placeholder-image">
+                                <span>🎬</span>
+                                <p>Motion Design</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Motion Design 3D</h3>
+                            <p>Création d'animations 3D et motion graphics pour projets professionnels</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-badge">Blender</span>
+                                <span class="tech-badge">Animation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Showcase -->
+    <section class="skills-showcase">
+        <div class="container">
+            <h2 class="section-title">Compétences 3D</h2>
+            <div class="skills-grid-detailed">
+                <div class="skill-detail-card">
+                    <h3>Modélisation 3D</h3>
+                    <ul>
+                        <li>Modélisation polygonale</li>
+                        <li>Topologie optimisée</li>
+                        <li>UV Mapping</li>
+                        <li>Texturing</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <h3>Animation</h3>
+                    <ul>
+                        <li>Animation de personnages</li>
+                        <li>Animation procédurale</li>
+                        <li>Rigging</li>
+                        <li>Keyframe animation</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <h3>Rendu & Post-production</h3>
+                    <ul>
+                        <li>Rendu Cycles / Eevee</li>
+                        <li>Compositing</li>
+                        <li>Post-processing</li>
+                        <li>Optimisation de rendu</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <h3>Intégration</h3>
+                    <ul>
+                        <li>Unity 3D</li>
+                        <li>Unreal Engine</li>
+                        <li>Export OBJ/FBX</li>
+                        <li>Optimisation pour temps réel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Links -->
+    <section class="external-links-section">
+        <div class="container">
+            <h2 class="section-title">Retrouvez mes créations</h2>
+            <div class="external-links-grid">
+                <a href="https://www.deviantart.com/aymericpihery" target="_blank" class="external-link-card">
+                    <div class="external-link-icon">🎨</div>
+                    <h3>DeviantArt</h3>
+                    <p>Portfolio complet de mes créations</p>
+                </a>
+                <a href="https://displate.com/aymericpihery" target="_blank" class="external-link-card">
+                    <div class="external-link-icon">🖼️</div>
+                    <h3>Displate</h3>
+                    <p>Boutique d'art - Tableaux disponibles</p>
+                </a>
+                <a href="https://www.instagram.com/aymeric_pihery/" target="_blank" class="external-link-card">
+                    <div class="external-link-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Créations visuelles et behind-the-scenes</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aymeric PIHERY. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/aymeric-pihery/" target="_blank" rel="noopener noreferrer">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/creations-3d.js"></script>
+</body>
+</html>
+
+

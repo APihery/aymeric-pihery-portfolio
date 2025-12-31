@@ -1,0 +1,218 @@
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+
+.page-header {
+    padding: var(--spacing-2xl) 0;
+    margin-top: 70px;
+    background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+    color: white;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.skills-section {
+    background: var(--bg-secondary);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skill-category {
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.skill-item {
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.skill-item:hover {
+    background: var(--terracotta);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+
+.education-section {
+    background: var(--bg-primary);
+}
+
+.education-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    transition: all var(--transition-base);
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.education-date {
+    font-weight: 600;
+    color: var(--terracotta);
+    min-width: 100px;
+}
+
+.education-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.education-content p {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   SKILLS SHOWCASE
+   ============================================ */
+
+.skills-showcase {
+    background: var(--bg-secondary);
+}
+
+.skills-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skill-detail-card {
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.skill-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.skill-detail-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.skill-detail-card ul {
+    list-style: none;
+}
+
+.skill-detail-card li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.skill-detail-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-weight: bold;
+}
+
+/* ============================================
+   EXTERNAL LINKS SECTION
+   ============================================ */
+
+.external-links-section {
+    background: var(--bg-primary);
+}
+
+.external-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.external-link-card {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    display: block;
+}
+
+.external-link-card:hover {
+    background: var(--terracotta);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.external-link-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        padding-left: var(--spacing-md);
+    }
+}
+

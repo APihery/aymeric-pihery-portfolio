@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement - Aymeric PIHERY</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dev.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Aymeric PIHERY</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav.about">Parcours</a></li>
+                <li><a href="dev.html" class="nav-link active" data-i18n="nav.dev">Développement</a></li>
+                <li><a href="creations-3d.html" class="nav-link" data-i18n="nav.creations">Créations 3D</a></li>
+                <li><a href="video.html" class="nav-link" data-i18n="nav.video">Vidéo</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-slider">🌙</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-i18n="dev.title">Projets de Développement</h1>
+            <p class="page-subtitle" data-i18n="dev.subtitle">Découvrez mes projets open-source et mes contributions techniques sur GitHub</p>
+        </div>
+    </section>
+
+    <!-- Skills Overview -->
+    <section class="dev-skills-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="dev.skills.title">Technologies & Compétences</h2>
+            
+            <!-- Highlighted Skills -->
+            <div class="highlighted-skills">
+                <h3 class="skills-subtitle" data-i18n="dev.skills.highlighted">Compétences principales</h3>
+                <div class="highlighted-badges">
+                    <span class="highlight-badge">Blender</span>
+                    <span class="highlight-badge">DaVinci Resolve</span>
+                    <span class="highlight-badge">3D modeling</span>
+                    <span class="highlight-badge">.NET</span>
+                    <span class="highlight-badge">.NET C#</span>
+                    <span class="highlight-badge">C#</span>
+                    <span class="highlight-badge">Microsoft Azure DevOps</span>
+                    <span class="highlight-badge">Unity</span>
+                    <span class="highlight-badge">Unreal Engine</span>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-overview">
+                <!-- Langages de programmation -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">💻</div>
+                    <h3 data-i18n="dev.skills.languages">Langages de programmation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">C</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">C#</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Kotlin</span>
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">X86 assembly</span>
+                        <span class="skill-badge">IDL</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Bibliothèques -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3 data-i18n="dev.skills.frameworks">Frameworks & Bibliothèques</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">.NET</span>
+                        <span class="skill-badge">.NET C#</span>
+                        <span class="skill-badge">ASP.NET Core</span>
+                        <span class="skill-badge">.NET MAUI</span>
+                        <span class="skill-badge">Flask</span>
+                        <span class="skill-badge">Microsoft Xamarin</span>
+                    </div>
+                </div>
+
+                <!-- Game Engines & 3D -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3 data-i18n="dev.skills.game">Game Engines & 3D</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Unity</span>
+                        <span class="skill-badge">Unreal Engine</span>
+                        <span class="skill-badge">Blender</span>
+                        <span class="skill-badge">Nvidia Omniverse</span>
+                        <span class="skill-badge">3D modeling</span>
+                        <span class="skill-badge">3D animation</span>
+                        <span class="skill-badge">Rendering</span>
+                        <span class="skill-badge">Texture mapping</span>
+                    </div>
+                </div>
+
+                <!-- Outils de développement -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3 data-i18n="dev.skills.tools">Outils de développement</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Visual Studio</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">GitLab</span>
+                        <span class="skill-badge">Android Studio</span>
+                        <span class="skill-badge">TortoiseSVN</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">☁️</div>
+                    <h3 data-i18n="dev.skills.cloud">Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Microsoft Azure DevOps</span>
+                        <span class="skill-badge">Elastic Stack</span>
+                        <span class="skill-badge">REST API's</span>
+                    </div>
+                </div>
+
+                <!-- Montage & Animation -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🎬</div>
+                    <h3 data-i18n="dev.skills.video">Montage & Animation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">DaVinci Resolve</span>
+                        <span class="skill-badge">Video editing</span>
+                        <span class="skill-badge">Video compositing</span>
+                        <span class="skill-badge">2D animation</span>
+                        <span class="skill-badge">Motion graphic design</span>
+                        <span class="skill-badge">2D motion graphic</span>
+                        <span class="skill-badge">3D motion graphic</span>
+                    </div>
+                </div>
+
+                <!-- Design & Modélisation -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3 data-i18n="dev.skills.design">Design & Modélisation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">2D modeling</span>
+                        <span class="skill-badge">Image editing</span>
+                        <span class="skill-badge">Adobe Substance 3D Painter</span>
+                        <span class="skill-badge">TopSolid'Design</span>
+                        <span class="skill-badge">Digital photos</span>
+                    </div>
+                </div>
+
+                <!-- AR/VR & Technologies -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🥽</div>
+                    <h3 data-i18n="dev.skills.arvr">AR/VR & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Augmented reality</span>
+                        <span class="skill-badge">Virtual reality</span>
+                        <span class="skill-badge">LLM</span>
+                        <span class="skill-badge">Artificial intelligence</span>
+                    </div>
+                </div>
+
+                <!-- Systèmes & Administration -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🖥️</div>
+                    <h3 data-i18n="dev.skills.systems">Systèmes & Administration</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Linux</span>
+                        <span class="skill-badge">Debian</span>
+                        <span class="skill-badge">Ubuntu</span>
+                        <span class="skill-badge">Android</span>
+                        <span class="skill-badge">Network administration</span>
+                        <span class="skill-badge">System administration</span>
+                        <span class="skill-badge">Shell scripting</span>
+                    </div>
+                </div>
+
+                <!-- Autres compétences -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">📋</div>
+                    <h3 data-i18n="dev.skills.other">Autres compétences</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">CAD</span>
+                        <span class="skill-badge">Desktop applications</span>
+                        <span class="skill-badge">Project management</span>
+                        <span class="skill-badge">Sanity check</span>
+                        <span class="skill-badge">PoC</span>
+                        <span class="skill-badge">PDF format</span>
+                    </div>
+                </div>
+
+                <!-- Langues -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🌍</div>
+                    <h3 data-i18n="dev.skills.languages_spoken">Langues</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">French</span>
+                        <span class="skill-badge">English</span>
+                    </div>
+                </div>
+
+                <!-- Secteurs d'activité -->
+                <div class="skill-category-card">
+                    <div class="skill-icon">🏢</div>
+                    <h3 data-i18n="dev.skills.sectors">Secteurs d'activité</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Aerospace & Defense</span>
+                        <span class="skill-badge">ICT</span>
+                        <span class="skill-badge">Car maker</span>
+                        <span class="skill-badge">Defense sector</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="dev.projects.title">Mes Projets GitHub</h2>
+            
+            <!-- Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="dev.filters.all">Tous</button>
+                <button class="filter-btn" data-filter="csharp">C#</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="unity">Unity</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Audio Visualizer -->
+                <div class="project-card" data-category="python">
+                    <div class="project-header">
+                        <h3 class="project-title">Audio Visualizer</h3>
+                    </div>
+                    <p class="project-description">Ce projet contient deux scripts Python pour visualiser et créer des fichiers de visualisation audio. Le premier script permet de tester la visualisation en temps réel, tandis que le second génère une vidéo sans son.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pygame</span>
+                        <span class="tech-badge">Librosa</span>
+                        <span class="tech-badge">OpenCV</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">FFmpeg</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/APihery/AudioVisualizer" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <span class="link-icon">🔗</span>
+                            <span data-i18n="dev.project.view">Voir sur GitHub</span>
+                        </a>
+                        <span class="project-date-wrapper">
+                            <span class="project-date" data-i18n="dev.project.published">Publié le</span>
+                            <span class="project-date-value">02/2025</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Mistral AI SDK for .NET -->
+                <div class="project-card" data-category="csharp dotnet">
+                    <div class="project-header">
+                        <h3 class="project-title">Mistral AI SDK for .NET</h3>
+                    </div>
+                    <p class="project-description">Un SDK .NET complet pour interagir avec l'API de Mistral AI, offrant des méthodes simples d'utilisation pour les complétions de chat et d'autres services d'IA.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">.NET</span>
+                        <span class="tech-badge">SDK</span>
+                        <span class="tech-badge">API</span>
+                        <span class="tech-badge">AI</span>
+                        <span class="tech-badge">NuGet</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/APihery/MistralSDK-.Net" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <span class="link-icon">🔗</span>
+                            <span data-i18n="dev.project.view">Voir sur GitHub</span>
+                        </a>
+                        <span class="project-date-wrapper">
+                            <span class="project-date" data-i18n="dev.project.published">Publié le</span>
+                            <span class="project-date-value">08/2025</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Ajoutez d'autres projets ici en copiant la structure ci-dessus -->
+                <!-- 
+                <div class="project-card" data-category="javascript web">
+                    <div class="project-header">
+                        <h3 class="project-title">Autre Projet</h3>
+                    </div>
+                    <p class="project-description">Description...</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">React</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/votre-username/nom-du-repo" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <span class="link-icon">🔗</span>
+                            <span data-i18n="dev.project.view">Voir sur GitHub</span>
+                        </a>
+                        <span class="project-date-wrapper">
+                            <span class="project-date" data-i18n="dev.project.published">Publié le</span>
+                            <span class="project-date-value">01/01/2024</span>
+                        </span>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Profile Link -->
+    <section class="github-section">
+        <div class="container">
+            <div class="github-card">
+                <div class="github-icon">🐙</div>
+                <h3 data-i18n="dev.github.title">Retrouvez-moi sur GitHub</h3>
+                <p data-i18n="dev.github.description">Explorez tous mes projets, contributions et repositories open-source</p>
+                <a href="https://github.com/APihery" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <span data-i18n="dev.github.button">Voir mon profil GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aymeric PIHERY. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/aymeric-pihery/" target="_blank" rel="noopener noreferrer" data-i18n="footer.contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/dev.js"></script>
+</body>
+</html>
+

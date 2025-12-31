@@ -1,0 +1,833 @@
+/* ============================================
+   INTERACTIVE TIMELINE - SIMPLE & CLEAN STYLE
+   ============================================ */
+
+.interactive-timeline-section {
+    background: var(--bg-secondary);
+    padding: calc(var(--spacing-2xl) + 60px) 0;
+    margin-top: 0;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-timeline-section .container {
+    position: relative;
+    overflow: visible;
+    max-width: 100%;
+}
+
+.interactive-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px var(--spacing-md) 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px;
+    gap: var(--spacing-xs);
+    overflow: visible;
+}
+
+.interactive-timeline-section .container {
+    overflow: hidden;
+    position: relative;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--text-light);
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+[data-theme="dark"] .timeline-line {
+    background: var(--border-color);
+    opacity: 0.4;
+}
+
+/* Time markers on main timeline */
+.timeline-time-markers {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.timeline-time-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    opacity: 0.4;
+    border: 2px solid var(--bg-primary);
+    box-shadow: 0 0 0 1px var(--border-color);
+}
+
+.timeline-time-marker .timeline-time-marker-label {
+    opacity: 1 !important;
+}
+
+[data-theme="dark"] .timeline-time-marker {
+    background: var(--terracotta-light);
+    border-color: var(--bg-primary);
+    box-shadow: 0 0 0 1px var(--border-color);
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .timeline-time-marker .timeline-time-marker-label {
+    opacity: 1 !important;
+}
+
+.timeline-time-marker-label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%) translateY(-25px) translateZ(0);
+    font-size: 0.65rem;
+    color: var(--text-light) !important;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 1 !important;
+    font-family: 'Inter', sans-serif;
+    z-index: 100 !important;
+    background: var(--bg-secondary) !important;
+    background-color: var(--bg-secondary) !important;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: none;
+    isolation: isolate;
+    mix-blend-mode: normal;
+    /* Create new stacking context to escape parent opacity */
+    will-change: opacity, transform;
+}
+
+[data-theme="dark"] .timeline-time-marker-label {
+    color: var(--border-color) !important;
+    background: var(--bg-secondary) !important;
+    background-color: var(--bg-secondary) !important;
+    opacity: 1 !important;
+    border: none;
+    box-shadow: none;
+    mix-blend-mode: normal;
+}
+
+/* Timeline Graduations */
+.timeline-graduations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.timeline-graduation-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--text-light);
+    opacity: 0.5;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Major graduations (years) - taller */
+.timeline-graduation-major {
+    top: 20%;
+    bottom: 20%;
+    opacity: 0.6;
+}
+
+/* Minor graduations (semesters) - shorter */
+.timeline-graduation-minor {
+    top: 35%;
+    bottom: 35%;
+    opacity: 0.4;
+}
+
+[data-theme="dark"] .timeline-graduation-bar {
+    background: var(--border-color);
+    opacity: 0.2;
+}
+
+[data-theme="dark"] .timeline-graduation-major {
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .timeline-graduation-minor {
+    opacity: 0.15;
+}
+
+/* Timeline Segments Container - Single container for all segments */
+.timeline-segments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.timeline-segments > * {
+    pointer-events: auto;
+}
+
+/* Timeline Segments - Simple Design */
+.timeline-segment {
+    position: absolute;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 2;
+}
+
+.timeline-segment:hover {
+    z-index: 8;
+}
+
+.timeline-segment.active {
+    z-index: 9;
+}
+
+.timeline-segment.professional {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-segment.parallel {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Simple segment line */
+.timeline-segment-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--text-light);
+    opacity: 0;
+    transition: all var(--transition-base);
+}
+
+.timeline-segment.professional .timeline-segment-line,
+.timeline-segment.parallel .timeline-segment-line {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+[data-theme="dark"] .timeline-segment-line {
+    background: var(--border-color);
+    opacity: 0;
+}
+
+.timeline-segment:hover .timeline-segment-line,
+.timeline-segment.active .timeline-segment-line {
+    background: var(--terracotta);
+    opacity: 0.6;
+    height: 3px;
+}
+
+[data-theme="dark"] .timeline-segment:hover .timeline-segment-line,
+[data-theme="dark"] .timeline-segment.active .timeline-segment-line {
+    opacity: 0.7;
+}
+
+/* Timeline Point */
+.timeline-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: auto;
+    transition: all var(--transition-base);
+    margin: 0;
+}
+
+.timeline-point > *:not(.timeline-role):not(.timeline-company):not(.timeline-label) {
+    position: relative;
+}
+
+.timeline-point .timeline-role,
+.timeline-point .timeline-company,
+.timeline-point .timeline-label {
+    position: absolute !important;
+}
+
+/* Connection lines from dot to labels */
+.timeline-point::before,
+.timeline-point::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--terracotta), rgba(224, 122, 95, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 4;
+    transform-origin: center;
+}
+
+[data-theme="dark"] .timeline-point::before,
+[data-theme="dark"] .timeline-point::after {
+    background: linear-gradient(to bottom, var(--terracotta-light), rgba(244, 162, 97, 0.3));
+}
+
+/* Line to role (top) for professional segments */
+.timeline-segment.professional .timeline-point::before {
+    top: -50px;
+    height: 50px;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: bottom center;
+}
+
+/* Line to company (bottom) for professional segments */
+.timeline-segment.professional .timeline-point::after {
+    bottom: -50px;
+    height: 50px;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+}
+
+/* Line to role (bottom) for parallel segments */
+.timeline-segment.parallel .timeline-point::before {
+    bottom: -50px;
+    height: 50px;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+}
+
+/* Line to company (top) for parallel segments */
+.timeline-segment.parallel .timeline-point::after {
+    top: -50px;
+    height: 50px;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: bottom center;
+}
+
+/* Show connection lines on hover and active */
+.timeline-segment:hover .timeline-point::before,
+.timeline-segment:hover .timeline-point::after,
+.timeline-segment.active .timeline-point::before,
+.timeline-segment.active .timeline-point::after {
+    opacity: 0.5;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.timeline-segment.active .timeline-point::before,
+.timeline-segment.active .timeline-point::after {
+    opacity: 0.6;
+}
+
+.timeline-segment.professional .timeline-point,
+.timeline-segment.parallel .timeline-point {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Simple dot */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    border: 3px solid var(--bg-primary);
+    transition: all var(--transition-base);
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .timeline-dot {
+    border-color: var(--bg-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-segment:hover .timeline-dot {
+    width: 18px;
+    height: 18px;
+    background: var(--terracotta-dark);
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(224, 122, 95, 0.4);
+    margin: 0;
+}
+
+.timeline-segment.active .timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--terracotta-dark);
+    border-width: 4px;
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.5);
+    margin: 0;
+}
+
+/* Timeline Labels */
+.timeline-label {
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 0;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    position: absolute !important;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100 !important;
+    background: var(--bg-primary) !important;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 0 2px var(--bg-primary);
+    /* Ensure background is fully opaque */
+    opacity: 1;
+    /* Create a visual separation from graduation lines */
+    isolation: isolate;
+}
+
+[data-theme="dark"] .timeline-label {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color);
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--bg-secondary);
+}
+
+.timeline-segment:hover .timeline-label,
+.timeline-segment.active .timeline-label {
+    color: var(--terracotta);
+    font-weight: 700;
+    border-color: var(--terracotta);
+}
+
+[data-theme="dark"] .timeline-segment:hover .timeline-label,
+[data-theme="dark"] .timeline-segment.active .timeline-label {
+    color: var(--terracotta-light);
+    border-color: var(--terracotta);
+}
+
+/* Role and Company - Hidden by default, visible on hover/active */
+.timeline-role {
+    position: absolute !important;
+    top: -50px !important;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all var(--transition-base);
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+    z-index: 1001 !important;
+    max-width: 180px;
+    overflow: visible;
+    text-overflow: ellipsis;
+    background: var(--bg-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .timeline-role {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+.timeline-segment:hover .timeline-role,
+.timeline-segment.active .timeline-role,
+.timeline-segment:hover .timeline-point .timeline-role,
+.timeline-segment.active .timeline-point .timeline-role {
+    opacity: 1 !important;
+    color: var(--terracotta);
+    font-weight: 700;
+    border-color: var(--terracotta);
+    transform: translateX(-50%) translateY(0) !important;
+    z-index: 1001 !important;
+    animation: roleFadeIn 0.3s ease-out;
+    display: block !important;
+    visibility: visible !important;
+}
+
+[data-theme="dark"] .timeline-segment:hover .timeline-role,
+[data-theme="dark"] .timeline-segment.active .timeline-role,
+[data-theme="dark"] .timeline-segment:hover .timeline-point .timeline-role,
+[data-theme="dark"] .timeline-segment.active .timeline-point .timeline-role {
+    color: var(--terracotta-light);
+    border-color: var(--terracotta);
+}
+
+@keyframes roleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.timeline-company {
+    position: absolute !important;
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    opacity: 0;
+    transition: all var(--transition-base);
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+    z-index: 1001 !important;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--bg-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .timeline-company {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.timeline-segment:hover .timeline-company,
+.timeline-segment.active .timeline-company {
+    opacity: 1;
+    color: var(--text-primary);
+    font-weight: 600;
+    border-color: var(--terracotta);
+    transform: translateX(-50%) translateY(0);
+    z-index: 10;
+    animation: companyFadeIn 0.3s ease-out;
+}
+
+@keyframes companyFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+[data-theme="dark"] .timeline-segment:hover .timeline-company,
+[data-theme="dark"] .timeline-segment.active .timeline-company {
+    color: var(--text-primary);
+    border-color: var(--terracotta);
+}
+
+.timeline-segment.parallel .timeline-role {
+    bottom: -90px !important;
+    top: auto !important;
+}
+
+.timeline-segment.parallel .timeline-company {
+    top: -90px !important;
+    bottom: auto !important;
+}
+
+/* ============================================
+   EXPERIENCE SECTION (ABOUT PAGE)
+   ============================================ */
+
+.experience-section {
+    background: var(--bg-primary);
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item.detailed {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+}
+
+.timeline-item.detailed.active {
+    display: block;
+    animation: experienceFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes experienceFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-base);
+}
+
+.timeline-item.detailed.active .timeline-marker {
+    width: 20px;
+    height: 20px;
+    background: var(--terracotta-dark);
+    box-shadow: 0 4px 8px rgba(224, 122, 95, 0.4);
+}
+
+[data-theme="dark"] .timeline-item.detailed.active .timeline-marker {
+    box-shadow: 0 4px 8px rgba(224, 122, 95, 0.5);
+}
+
+.timeline-item.detailed .timeline-content {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.timeline-item.detailed.active .timeline-content {
+    border-color: var(--terracotta);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-item.detailed .timeline-date {
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: var(--spacing-md);
+}
+
+.timeline-item.detailed .timeline-date::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-size: 0.75rem;
+}
+
+.timeline-item.detailed h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.timeline-item.detailed.active h2 {
+    color: var(--terracotta-dark);
+}
+
+[data-theme="dark"] .timeline-item.detailed.active h2 {
+    color: var(--terracotta-light);
+}
+
+.timeline-item.detailed h3 {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+}
+
+.timeline-item.detailed.active h3 {
+    color: var(--terracotta);
+}
+
+[data-theme="dark"] .timeline-item.detailed.active h3 {
+    color: var(--terracotta-light);
+}
+
+.task-list {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.task-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.task-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-weight: bold;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+}
+
+.tech-tag {
+    padding: 0.375rem 0.875rem;
+    background: var(--terracotta);
+    color: white;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-tag:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(224, 122, 95, 0.4);
+}
+
+.timeline-item.detailed.active .tech-tag {
+    box-shadow: 0 2px 6px rgba(224, 122, 95, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TIMELINE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .interactive-timeline {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .timeline-line {
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-segment {
+        width: 100%;
+        min-height: 80px;
+    }
+
+    .timeline-segment-line {
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-point {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: var(--spacing-sm) 0;
+        gap: var(--spacing-md);
+        position: relative;
+        left: 0;
+    }
+
+    .timeline-dot {
+        flex-shrink: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-label {
+        margin-top: 0;
+        margin-left: var(--spacing-lg);
+    }
+
+    .timeline-role {
+        position: static;
+        transform: none;
+        margin-left: var(--spacing-lg);
+        opacity: 1;
+    }
+
+    .timeline-company {
+        position: static;
+        transform: none;
+        margin-left: var(--spacing-lg);
+        opacity: 1;
+    }
+}

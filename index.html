@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aymeric PIHERY - Portfolio</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Aymeric PIHERY</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav.about">Parcours</a></li>
+                <li><a href="dev.html" class="nav-link" data-i18n="nav.dev">Développement</a></li>
+                <li><a href="creations-3d.html" class="nav-link" data-i18n="nav.creations">Créations 3D</a></li>
+                <li><a href="video.html" class="nav-link" data-i18n="nav.video">Vidéo</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-slider">🌙</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line" data-i18n="hero.title1">Développeur C# .NET</span>
+                    <span class="title-line" data-i18n="hero.title2">Modélisateur 3D / Animateur 3D</span>
+                    <span class="title-line" data-i18n="hero.title3">Motion Designer / Monteur Vidéo</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    Ingénieur spécialisé en technologies 3D et développement logiciel, 
+                    je combine expertise technique et créativité pour concevoir des solutions innovantes.
+                </p>
+                <div class="hero-buttons">
+                    <a href="about.html" class="btn btn-primary" data-i18n="hero.btn1">Découvrir mon parcours</a>
+                    <a href="creations-3d.html" class="btn btn-secondary" data-i18n="hero.btn2">Voir mes créations</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-content">
+                        <h3 data-i18n="hero.skills">Compétences Clés</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">C# .NET</span>
+                            <span class="skill-tag">Blender</span>
+                            <span class="skill-tag">Unity</span>
+                            <span class="skill-tag">Unreal Engine</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">DaVinci Resolve</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Overview -->
+    <section class="overview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="overview.title">En quelques mots</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">💼</div>
+                    <h3 data-i18n="overview.exp.title">Expérience</h3>
+                    <p data-i18n="overview.exp.text">Plus de 5 ans d'expérience dans le développement logiciel et la création 3D</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🎨</div>
+                    <h3 data-i18n="overview.crea.title">Créativité</h3>
+                    <p data-i18n="overview.crea.text">Artiste 3D indépendant avec des créations exposées et vendues sur Displate</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🚀</div>
+                    <h3 data-i18n="overview.innov.title">Innovation</h3>
+                    <p data-i18n="overview.innov.text">Spécialisé en AR/VR, simulation industrielle et applications immersives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Work -->
+    <section class="recent-work">
+        <div class="container">
+            <h2 class="section-title" data-i18n="recent.title">Expériences récentes</h2>
+            <div class="work-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2025 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>Développeur C#, Modélisateur 3D</h3>
+                        <h4>Akkodis</h4>
+                        <p>Optimisation et intégration de modèles 3D de voitures pour Ansys, incluant modélisation, automatisation Python et outils de validation (OBJ/FBX).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">01/2025 - 03/2025</div>
+                    <div class="timeline-content">
+                        <h3>Développeur C# .NET & IA</h3>
+                        <h4>O.R.I.M</h4>
+                        <p>Développement d'une application .Net MAUI avec IA (Mistral) pour faciliter la recherche dans les documents de copropriété.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">09/2024 - 12/2024</div>
+                    <div class="timeline-content">
+                        <h3>Développeur C# .NET</h3>
+                        <h4>TopSolid</h4>
+                        <p>Développement sur l'application TopSolid Wood.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="about.html" class="btn btn-outline" data-i18n="recent.btn">Voir tout le parcours</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="links.title">Retrouvez-moi</h2>
+            <div class="links-grid">
+                <a href="https://www.linkedin.com/in/aymeric-pihery/" target="_blank" class="link-card">
+                    <div class="link-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Profil professionnel</p>
+                </a>
+                <a href="https://www.deviantart.com/aymericpihery" target="_blank" class="link-card">
+                    <div class="link-icon">🎨</div>
+                    <h3>DeviantArt</h3>
+                    <p>Portfolio artistique</p>
+                </a>
+                <a href="https://www.instagram.com/aymeric_pihery/" target="_blank" class="link-card">
+                    <div class="link-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Créations visuelles</p>
+                </a>
+                <a href="https://www.youtube.com/@Aymeric_Pihery" target="_blank" class="link-card">
+                    <div class="link-icon">🎬</div>
+                    <h3>YouTube</h3>
+                    <p>Chaîne vidéo</p>
+                </a>
+                <a href="https://displate.com/aymericpihery" target="_blank" class="link-card">
+                    <div class="link-icon">🖼️</div>
+                    <h3>Displate</h3>
+                    <p>Boutique d'art</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aymeric PIHERY. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/aymeric-pihery/" target="_blank" rel="noopener noreferrer" data-i18n="footer.contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+
