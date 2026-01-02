@@ -96,24 +96,7 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // First, encode all image src paths to handle special characters and spaces for GitHub Pages
-    const images = document.querySelectorAll('img[src*="ressources"]');
-    images.forEach(img => {
-        const originalSrc = img.getAttribute('src');
-        if (originalSrc) {
-            // Encode the path properly for URLs
-            // Split the path and encode each segment separately to preserve slashes
-            const pathParts = originalSrc.split('/');
-            const encodedParts = pathParts.map(part => {
-                // Encode special characters but preserve slashes
-                return encodeURIComponent(part);
-            });
-            const encodedSrc = encodedParts.join('/');
-            img.src = encodedSrc;
-        }
-    });
-
-    // Then set up the lightbox
+    // Set up the lightbox
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.createElement('div');
     lightbox.className = 'gallery-lightbox';
