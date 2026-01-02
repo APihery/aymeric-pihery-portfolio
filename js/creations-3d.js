@@ -92,10 +92,28 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
 });
 
 // ============================================
-// GALLERY LIGHTBOX
+// GALLERY LIGHTBOX & IMAGE PATH ENCODING
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // First, encode all image src paths to handle special characters and spaces for GitHub Pages
+    const images = document.querySelectorAll('img[src*="ressources"]');
+    images.forEach(img => {
+        const originalSrc = img.getAttribute('src');
+        if (originalSrc) {
+            // Encode the path properly for URLs
+            // Split the path and encode each segment separately to preserve slashes
+            const pathParts = originalSrc.split('/');
+            const encodedParts = pathParts.map(part => {
+                // Encode special characters but preserve slashes
+                return encodeURIComponent(part);
+            });
+            const encodedSrc = encodedParts.join('/');
+            img.src = encodedSrc;
+        }
+    });
+
+    // Then set up the lightbox
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.createElement('div');
     lightbox.className = 'gallery-lightbox';
@@ -114,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
             if (img) {
+                // Use the already encoded src
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 lightbox.classList.add('active');
@@ -136,11 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.addEventListener('click', (e) => {
         closeLightbox();
     });
-
-    // Prevent closing when clicking directly on the image (optional - remove if you want image click to close)
-    // lightboxImg.addEventListener('click', (e) => {
-    //     e.stopPropagation();
-    // });
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
