@@ -9,6 +9,7 @@ const translations = {
             about: 'Parcours',
             dev: 'Développement',
             creations: 'Créations 3D',
+            'image-editing': 'Retouches d\'Image',
             video: 'Vidéo'
         },
         hero: {
@@ -92,6 +93,7 @@ const translations = {
             about: 'Career',
             dev: 'Development',
             creations: '3D Creations',
+            'image-editing': 'Image Editing',
             video: 'Video'
         },
         hero: {
