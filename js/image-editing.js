@@ -17,7 +17,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.image-card, .image-skill-card, .tool-card, .external-link-card, .before-after-item');
+    const animateElements = document.querySelectorAll('.image-skill-card, .tool-card, .external-link-card, .intro-text, .intro-actions');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';

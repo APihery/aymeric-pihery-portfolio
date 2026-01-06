@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const comparisonContainers = document.querySelectorAll('.comparison-container');
     
     comparisonContainers.forEach(container => {
-        const beforeImage = container.querySelector('.comparison-image-before');
+        const afterImage = container.querySelector('.comparison-image-after');
         const slider = container.querySelector('.comparison-slider');
         let isDragging = false;
         
         // Initialize position at 50%
         let position = 50;
-        updateSlider(position, container, beforeImage, slider);
+        updateSlider(position, container, afterImage, slider);
         
         // Mouse move handler - follows mouse when hovering
         const handleMouseMove = (e) => {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
             
             position = percentage;
-            updateSlider(position, container, beforeImage, slider);
+            updateSlider(position, container, afterImage, slider);
         };
         
         // Mouse down handler
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
             
             position = percentage;
-            updateSlider(position, container, beforeImage, slider);
+            updateSlider(position, container, afterImage, slider);
             
             e.preventDefault();
         };
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
             
             touchPosition = percentage;
-            updateSlider(touchPosition, container, beforeImage, slider);
+            updateSlider(touchPosition, container, afterImage, slider);
         };
         
         container.addEventListener('touchstart', (e) => {
@@ -113,13 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    function updateSlider(position, container, beforeImage, slider) {
+    function updateSlider(position, container, afterImage, slider) {
         // Update clip-path to reveal "after" image from left to right
-        // Position 0% = show only "before" (right, avant)
+        // Position 0% = show only "before" (left, avant)
         // Position 50% = show half "before" and half "after"
-        // Position 100% = show only "after" (left, après)
-        // Clip the "before" image from the left, showing it from position% to 100%
-        beforeImage.style.clipPath = `polygon(${position}% 0, 100% 0, 100% 100%, ${position}% 100%)`;
+        // Position 100% = show only "after" (right, après)
+        // Clip the "after" image from the left, showing it from position% to 100%
+        afterImage.style.clipPath = `polygon(${position}% 0, 100% 0, 100% 100%, ${position}% 100%)`;
         
         // Move slider to position
         slider.style.left = `${position}%`;
