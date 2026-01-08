@@ -1,0 +1,34 @@
+# Optimisations SEO et Performance pour GitHub Pages
+# Note: GitHub Pages ne supporte pas .htaccess, mais ce fichier sert de documentation
+
+# Redirections (si nécessaire)
+# Redirect 301 /old-page.html /new-page.html
+
+# Compression GZIP (géré par GitHub Pages automatiquement)
+# AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+
+# Cache des fichiers statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
+# Sécurité
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# UTF-8 Encoding
+AddDefaultCharset UTF-8
+
+# Pages d'erreur personnalisées (si nécessaire)
+# ErrorDocument 404 /404.html

@@ -13,4 +13,7 @@ Disallow: /css/
 Disallow: /js/
 
 # Sitemap
-Sitemap: https://aymeric-pihery.github.io/sitemap.xml
+Sitemap: https://apihery.github.io/aymeric-pihery-portfolio/sitemap.xml
+
+# Crawl-delay (optionnel, pour éviter de surcharger le serveur)
+Crawl-delay: 1

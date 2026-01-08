@@ -1,0 +1,20 @@
+/* TEAM */
+Developer: Aymeric PIHERY
+Contact: https://apihery.github.io/aymeric-pihery-portfolio/
+Location: France
+
+/* THANKS */
+Fonts: Google Fonts (Inter)
+Icons: Custom SVG
+
+/* SITE */
+Last update: 2026/01/08
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Vanilla JavaScript
+Software: Visual Studio Code, Git
+
+/* LINKS */
+GitHub: https://github.com/aymeric-pihery
+Instagram: https://www.instagram.com/aymeric_pihery/
+DeviantArt: https://www.deviantart.com/aymericpihery
+YouTube: https://www.youtube.com/@Aymeric_Pihery
