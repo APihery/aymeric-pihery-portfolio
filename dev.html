@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Développement - Aymeric PIHERY</title>
+    <title>Développement Web - Aymeric PIHERY</title>
+    <meta name="description" content="Portfolio de développement web d'Aymeric PIHERY - Applications web, interfaces utilisateur, technologies frontend et backend.">
+    <meta name="keywords" content="développement web, portfolio développeur, HTML, CSS, JavaScript, React, Node.js, Aymeric PIHERY">
+    <meta name="author" content="Aymeric PIHERY">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Développement Web - Aymeric PIHERY">
+    <meta property="og:description" content="Portfolio de développement web - Applications modernes et interfaces utilisateur">
+    <meta property="og:image" content="https://aymeric-pihery.github.io/ressources/profile.jpg">
+    <meta property="og:url" content="https://aymeric-pihery.github.io/dev.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://aymeric-pihery.github.io/dev.html">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/dev.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,11 +65,13 @@
     <section class="dev-skills-section">
         <div class="container">
             <h2 class="section-title" data-i18n="dev.skills.title">Technologies & Compétences</h2>
-            
+
             <!-- Highlighted Skills -->
-            <div class="highlighted-skills">
+            <div class="highlighted-skills" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="Aymeric PIHERY">
+                <meta itemprop="knowsAbout" content="Blender, DaVinci Resolve, 3D modeling, .NET, C#, Microsoft Azure DevOps, Unity, Unreal Engine, Développement web, JavaScript, HTML, CSS">
                 <h3 class="skills-subtitle" data-i18n="dev.skills.highlighted">Compétences principales</h3>
-                <div class="highlighted-badges">
+                <div class="highlighted-badges" itemprop="knowsAbout">
                     <span class="highlight-badge">Blender</span>
                     <span class="highlight-badge">DaVinci Resolve</span>
                     <span class="highlight-badge">3D modeling</span>
@@ -259,11 +272,16 @@
             <!-- Projects Grid -->
             <div class="projects-grid" id="projects-grid">
                 <!-- Audio Visualizer -->
-                <div class="project-card" data-category="python">
+                <div class="project-card" data-category="python" itemscope itemtype="https://schema.org/SoftwareSourceCode">
+                    <meta itemprop="name" content="Audio Visualizer">
+                    <meta itemprop="description" content="Scripts Python pour visualiser et créer des fichiers de visualisation audio">
+                    <meta itemprop="programmingLanguage" content="Python">
+                    <meta itemprop="author" content="Aymeric PIHERY">
+                    <meta itemprop="codeRepository" content="https://github.com/aymeric-pihery/audio-visualizer">
                     <div class="project-header">
-                        <h3 class="project-title">Audio Visualizer</h3>
+                        <h3 class="project-title" itemprop="name">Audio Visualizer</h3>
                     </div>
-                    <p class="project-description">Ce projet contient deux scripts Python pour visualiser et créer des fichiers de visualisation audio. Le premier script permet de tester la visualisation en temps réel, tandis que le second génère une vidéo sans son.</p>
+                    <p class="project-description" itemprop="description">Ce projet contient deux scripts Python pour visualiser et créer des fichiers de visualisation audio. Le premier script permet de tester la visualisation en temps réel, tandis que le second génère une vidéo sans son.</p>
                     <div class="project-tech">
                         <span class="tech-badge">Python</span>
                         <span class="tech-badge">Pygame</span>

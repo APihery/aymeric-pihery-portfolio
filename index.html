@@ -3,7 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aymeric PIHERY - Portfolio</title>
+    <title>Aymeric PIHERY - Portfolio Créatif 3D, Vidéo & Design</title>
+    <meta name="description" content="Portfolio d'Aymeric PIHERY - Spécialiste en création 3D, retouche d'images, colorimétrie vidéo et développement web. Découvrez mes projets professionnels et artistiques.">
+    <meta name="keywords" content="portfolio, 3D, création 3D, retouche image, colorimétrie, vidéo, développement web, Aymeric PIHERY, design, modélisation">
+    <meta name="author" content="Aymeric PIHERY">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Aymeric PIHERY - Portfolio Créatif">
+    <meta property="og:description" content="Portfolio d'Aymeric PIHERY - Spécialiste en création 3D, retouche d'images et colorimétrie vidéo">
+    <meta property="og:image" content="https://aymeric-pihery.github.io/ressources/profile.jpg">
+    <meta property="og:url" content="https://aymeric-pihery.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aymeric PIHERY - Portfolio Créatif">
+    <meta name="twitter:description" content="Portfolio d'Aymeric PIHERY - Spécialiste en création 3D, retouche d'images et colorimétrie vidéo">
+    <link rel="canonical" href="https://aymeric-pihery.github.io/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aymeric PIHERY",
+      "jobTitle": "Développeur C# .NET, Modélisateur 3D, Motion Designer",
+      "description": "Ingénieur spécialisé en technologies 3D et développement logiciel, je combine expertise technique et créativité pour concevoir des solutions innovantes.",
+      "url": "https://aymeric-pihery.github.io/",
+      "sameAs": [
+        "https://github.com/aymeric-pihery",
+        "https://www.instagram.com/aymeric_pihery/",
+        "https://www.deviantart.com/aymericpihery"
+      ],
+      "knowsAbout": [
+        "C# .NET",
+        "Blender",
+        "Unity",
+        "Unreal Engine",
+        "Python",
+        "DaVinci Resolve",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "3D Modeling",
+        "Motion Design",
+        "Color Grading"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "CY Tech"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,16 +89,19 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" itemscope itemtype="https://schema.org/Person">
         <div class="hero-content">
             <div class="hero-text">
+                <meta itemprop="name" content="Aymeric PIHERY">
+                <meta itemprop="jobTitle" content="Développeur C# .NET, Modélisateur 3D, Motion Designer">
+                <meta itemprop="description" content="Ingénieur spécialisé en technologies 3D et développement logiciel, je combine expertise technique et créativité pour concevoir des solutions innovantes.">
                 <h1 class="hero-title">
                     <span class="title-line" data-i18n="hero.title1">Développeur C# .NET</span>
                     <span class="title-line" data-i18n="hero.title2">Modélisateur 3D / Animateur 3D</span>
                     <span class="title-line" data-i18n="hero.title3">Motion Designer / Monteur Vidéo</span>
                 </h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">
-                    Ingénieur spécialisé en technologies 3D et développement logiciel, 
+                    Ingénieur spécialisé en technologies 3D et développement logiciel,
                     je combine expertise technique et créativité pour concevoir des solutions innovantes.
                 </p>
                 <div class="hero-buttons">
@@ -64,7 +113,7 @@
                 <div class="floating-card">
                     <div class="card-content">
                         <h3 data-i18n="hero.skills">Compétences Clés</h3>
-                        <div class="skills-grid">
+                        <div class="skills-grid" itemprop="knowsAbout">
                             <span class="skill-tag">C# .NET</span>
                             <span class="skill-tag">Blender</span>
                             <span class="skill-tag">Unity</span>

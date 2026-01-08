@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /dev.html
+Allow: /creations-3d.html
+Allow: /image-editing.html
+Allow: /video.html
+
+# Bloquer l'accès aux dossiers ressources pour éviter l'indexation des images brutes
+Disallow: /ressources/
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap
+Sitemap: https://aymeric-pihery.github.io/sitemap.xml
