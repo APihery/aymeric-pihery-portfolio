@@ -40,6 +40,7 @@
     </script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/dev.css">
+    <link rel="stylesheet" href="css/table-of-contents.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -84,8 +85,37 @@
         </div>
     </section>
 
+    <!-- Interactive Table of Contents -->
+    <section class="table-of-contents-section">
+        <div class="container">
+            <div class="interactive-toc">
+                <h2 class="toc-title hidden">Sommaire</h2>
+                <div class="toc-segments">
+                    <div class="toc-segment" data-target="dev-skills-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Technologies & Compétences</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="projects-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Projets GitHub</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="github-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Profil GitHub</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Overview -->
-    <section class="dev-skills-section">
+    <section id="dev-skills-section" class="dev-skills-section">
         <div class="container">
             <h2 class="section-title" data-i18n="dev.skills.title">Technologies & Compétences</h2>
 
@@ -278,7 +308,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section">
+    <section id="projects-section" class="projects-section">
         <div class="container">
             <h2 class="section-title" data-i18n="dev.projects.title">Mes Projets GitHub</h2>
             
@@ -402,7 +432,7 @@
     </section>
 
     <!-- GitHub Profile Link -->
-    <section class="github-section">
+    <section id="github-section" class="github-section">
         <div class="container">
             <div class="github-card">
                 <div class="github-icon">🐙</div>
@@ -429,6 +459,7 @@
 
     <script src="js/common.js"></script>
     <script src="js/dev.js"></script>
+    <script src="js/table-of-contents.js"></script>
 </body>
 </html>
 

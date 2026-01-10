@@ -40,6 +40,7 @@
     </script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/table-of-contents.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -84,8 +85,43 @@
         </div>
     </section>
 
+    <!-- Interactive Table of Contents -->
+    <section class="table-of-contents-section">
+        <div class="container">
+            <div class="interactive-toc">
+                <h2 class="toc-title hidden">Sommaire</h2>
+                <div class="toc-segments">
+                    <div class="toc-segment" data-target="video-intro-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Introduction</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="before-after-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Avant / Après</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="video-skills-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Compétences</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="tools-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Outils & Logiciels</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Introduction -->
-    <section class="video-intro-section">
+    <section id="video-intro-section" class="video-intro-section">
         <div class="container">
             <div class="video-intro-content">
                 <div class="intro-text">
@@ -106,7 +142,7 @@
     </section>
 
     <!-- Before/After Comparison Section -->
-    <section class="before-after-section">
+    <section id="before-after-section" class="before-after-section">
         <div class="container">
             <h2 class="section-title">Avant / Après - Colorimétrie</h2>
             <p class="section-subtitle">Découvrez les transformations colorimétriques réalisées sur ces images</p>
@@ -269,7 +305,7 @@
     </section>
 
     <!-- Video Skills -->
-    <section class="video-skills-section">
+    <section id="video-skills-section" class="video-skills-section">
         <div class="container">
             <h2 class="section-title">Compétences en Colorimétrie</h2>
             <div class="video-skills-grid">
@@ -308,7 +344,7 @@
     </section>
 
     <!-- Tools Section -->
-    <section class="tools-section">
+    <section id="tools-section" class="tools-section">
         <div class="container">
             <h2 class="section-title">Outils & Logiciels</h2>
             <div class="tools-grid">
@@ -354,6 +390,7 @@
 
     <script src="js/common.js"></script>
     <script src="js/video.js"></script>
+    <script src="js/table-of-contents.js"></script>
 </body>
 </html>
 

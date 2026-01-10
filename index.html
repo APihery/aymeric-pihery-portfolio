@@ -55,6 +55,7 @@
     </script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/table-of-contents.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -91,8 +92,43 @@
         </div>
     </nav>
 
+    <!-- Interactive Table of Contents -->
+    <section class="table-of-contents-section">
+        <div class="container">
+            <div class="interactive-toc">
+                <h2 class="toc-title hidden">Sommaire</h2>
+                <div class="toc-segments">
+                    <div class="toc-segment" data-target="hero-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Accueil</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="overview-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">En quelques mots</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="recent-work-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Expériences récentes</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="links-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Retrouvez-moi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
-    <section class="hero" itemscope itemtype="https://schema.org/Person">
+    <section id="hero-section" class="hero" itemscope itemtype="https://schema.org/Person">
         <div class="hero-content">
             <div class="hero-text">
                 <meta itemprop="name" content="Aymeric PIHERY">
@@ -131,7 +167,7 @@
     </section>
 
     <!-- Quick Overview -->
-    <section class="overview">
+    <section id="overview-section" class="overview">
         <div class="container">
             <h2 class="section-title" data-i18n="overview.title">En quelques mots</h2>
             <div class="overview-grid">
@@ -155,7 +191,7 @@
     </section>
 
     <!-- Recent Work -->
-    <section class="recent-work">
+    <section id="recent-work-section" class="recent-work">
         <div class="container">
             <h2 class="section-title" data-i18n="recent.title">Expériences récentes</h2>
             <div class="work-timeline">
@@ -191,7 +227,7 @@
     </section>
 
     <!-- Links Section -->
-    <section class="links-section">
+    <section id="links-section" class="links-section">
         <div class="container">
             <h2 class="section-title" data-i18n="links.title">Retrouvez-moi</h2>
             <div class="links-grid">
@@ -238,6 +274,7 @@
 
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/table-of-contents.js"></script>
 </body>
 </html>
 

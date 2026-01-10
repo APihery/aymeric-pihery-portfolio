@@ -1,0 +1,360 @@
+/* ============================================
+   INTERACTIVE TABLE OF CONTENTS - VERTICAL FIXED SIDEBAR
+   ============================================ */
+
+.table-of-contents-section {
+    position: fixed;
+    left: 0;
+    top: 70px; /* Below navbar (navbar height is ~70px) */
+    bottom: 0;
+    width: 280px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    z-index: 99; /* Below navbar (z-index: 1000) */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--spacing-lg) 0;
+    transition: transform var(--transition-base);
+}
+
+/* Hide scrollbar but keep functionality */
+.table-of-contents-section::-webkit-scrollbar {
+    width: 4px;
+}
+
+.table-of-contents-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-of-contents-section::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.table-of-contents-section::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+[data-theme="dark"] .table-of-contents-section {
+    border-right-color: var(--border-color);
+}
+
+.table-of-contents-section .container {
+    padding: 0 var(--spacing-md);
+    max-width: 100%;
+}
+
+.interactive-toc {
+    position: relative;
+    width: 100%;
+}
+
+.toc-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Option: Hide title for cleaner look */
+.toc-title.hidden {
+    display: none;
+}
+
+/* TOC Segments Container - Vertical List */
+.toc-segments {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* TOC Segments - Vertical Items */
+.toc-segment {
+    position: relative;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border-radius: 0.5rem;
+    margin-bottom: 2px;
+}
+
+.toc-segment:hover {
+    background: var(--bg-primary);
+}
+
+.toc-segment.active {
+    background: var(--bg-primary);
+    border-left: 3px solid var(--terracotta);
+}
+
+/* Remove segment line for vertical layout */
+.toc-segment-line {
+    display: none;
+}
+
+/* TOC Point - Now a horizontal flex container */
+.toc-point {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    position: relative;
+}
+
+/* Remove connection lines for vertical layout */
+.toc-point::before,
+.toc-point::after {
+    display: none;
+}
+
+/* Dot/Indicator for vertical layout */
+.toc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-light);
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .toc-dot {
+    background: var(--border-color);
+}
+
+.toc-segment:hover .toc-dot,
+.toc-segment.active .toc-dot {
+    background: var(--terracotta);
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.toc-segment.active .toc-dot {
+    box-shadow: 0 0 8px rgba(224, 122, 95, 0.5);
+}
+
+/* TOC Labels - Vertical Text */
+.toc-label {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all var(--transition-base);
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .toc-label {
+    color: var(--text-primary);
+}
+
+.toc-segment:hover .toc-label {
+    color: var(--terracotta);
+    font-weight: 600;
+}
+
+.toc-segment.active .toc-label {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .toc-segment:hover .toc-label,
+[data-theme="dark"] .toc-segment.active .toc-label {
+    color: var(--terracotta-light);
+}
+
+/* TOC Sublabels Container - Nested list */
+.toc-sublabels-container {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: var(--spacing-xs);
+    margin-left: var(--spacing-lg);
+    padding-left: var(--spacing-sm);
+    border-left: 2px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.toc-segment.active .toc-sublabels-container,
+.toc-segment.has-subsection:hover .toc-sublabels-container {
+    display: flex;
+    animation: sublabelsFadeIn 0.2s ease-out;
+}
+
+@keyframes sublabelsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TOC Sublabel - Nested items */
+.toc-sublabel {
+    position: relative;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+    font-family: 'Inter', sans-serif;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-theme="dark"] .toc-sublabel {
+    color: var(--text-secondary);
+}
+
+.toc-sublabel::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-light);
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.toc-sublabel:hover {
+    color: var(--text-primary);
+    font-weight: 500;
+    background: var(--bg-primary);
+}
+
+.toc-sublabel:hover::before {
+    background: var(--terracotta);
+    opacity: 1;
+}
+
+/* Active subsection */
+.toc-segment.active .toc-sublabel.active,
+.toc-sublabel.active {
+    color: var(--terracotta);
+    font-weight: 600;
+    background: var(--bg-primary);
+}
+
+.toc-sublabel.active::before {
+    background: var(--terracotta);
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+}
+
+[data-theme="dark"] .toc-sublabel.active {
+    color: var(--terracotta-light);
+}
+
+/* Subsection dropdown indicator */
+.toc-segment.has-subsection .toc-label::after {
+    content: ' ▼';
+    font-size: 0.7rem;
+    opacity: 0.6;
+    transition: transform var(--transition-base);
+    display: inline-block;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.toc-segment.active.has-subsection .toc-label::after {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* Adjust main content to account for fixed sidebar */
+/* Note: navbar is position:fixed with left:0 so it stays at left edge */
+/* We use padding-left on body to shift all content except navbar */
+body.has-toc {
+    padding-left: 280px;
+    transition: padding-left var(--transition-base);
+}
+
+/* Ensure navbar stays at left edge (not affected by body padding) */
+body.has-toc .navbar {
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .table-of-contents-section {
+        transform: translateX(-100%);
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-of-contents-section.open {
+        transform: translateX(0);
+        z-index: 1001; /* Above navbar on mobile when open */
+    }
+
+    body.has-toc {
+        padding-left: 0; /* Remove padding on mobile */
+    }
+
+    body.has-toc .navbar {
+        left: 0;
+        right: 0;
+    }
+
+    /* Toggle button for mobile */
+    .toc-toggle-button {
+        position: fixed;
+        left: var(--spacing-md);
+        top: 85px;
+        z-index: 1002;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        padding: var(--spacing-sm);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-base);
+    }
+
+    .toc-toggle-button:hover {
+        background: var(--bg-secondary);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .toc-toggle-button svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--text-primary);
+    }
+}
+
+@media (min-width: 1025px) {
+    .toc-toggle-button {
+        display: none;
+    }
+}

@@ -41,6 +41,7 @@
     </script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/creations-3d.css">
+    <link rel="stylesheet" href="css/table-of-contents.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -85,8 +86,59 @@
         </div>
     </section>
 
+    <!-- Interactive Table of Contents -->
+    <section class="table-of-contents-section">
+        <div class="container">
+            <div class="interactive-toc">
+                <h2 class="toc-title hidden">Sommaire</h2>
+                <div class="toc-segments">
+                    <div class="toc-segment" data-target="professional-videos">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Vidéos Professionnelles</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment has-subsection" data-target="advertising-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Créations Publicitaires</div>
+                        </div>
+                        <div class="toc-sublabels-container">
+                            <div class="toc-sublabel" data-subsection-target="criollo-project">Chocolatier Criollo</div>
+                            <div class="toc-sublabel" data-subsection-target="tonsor-hayuco-project">Tonsor & Hayuco</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="topology-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Modélisation Topologique</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="art-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Créations Artistiques</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="skills-showcase">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Compétences 3D</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="external-links-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Liens Externes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Professional Videos Section -->
-    <section class="professional-videos-section">
+    <section id="professional-videos" class="professional-videos-section">
         <div class="container">
             <h2 class="section-title">Vidéos Professionnelles</h2>
             <div class="videos-grid">
@@ -185,12 +237,12 @@
     </section>
 
     <!-- Advertising Section -->
-    <section class="advertising-section">
+    <section id="advertising-section" class="advertising-section">
         <div class="container">
             <h2 class="section-title">Créations Publicitaires</h2>
             
             <!-- Criollo Project -->
-            <div class="advertising-project" itemscope itemtype="https://schema.org/CreativeWork">
+            <div id="criollo-project" class="advertising-project" itemscope itemtype="https://schema.org/CreativeWork">
                 <meta itemprop="name" content="Chocolatier Criollo - Création Publicitaire">
                 <meta itemprop="description" content="Création publicitaire complète incluant vidéo promotionnelle et visuels pour réseaux sociaux">
                 <meta itemprop="creator" content="Aymeric PIHERY">
@@ -249,7 +301,7 @@
             </div>
 
             <!-- Tonsor&Hayuco Project -->
-            <div class="advertising-project">
+            <div id="tonsor-hayuco-project" class="advertising-project">
                 <div class="project-header">
                     <h3 class="project-title">Tonsor & Hayuco</h3>
                     <p class="project-description">Création publicitaire pour un établissement combinant barbier et torréfacteur de café</p>
@@ -296,7 +348,7 @@
     </section>
 
     <!-- Topology Section -->
-    <section class="topology-section">
+    <section id="topology-section" class="topology-section">
         <div class="container">
             <h2 class="section-title">Modélisation Topologique & Cartes</h2>
             
@@ -404,7 +456,7 @@
     </section>
 
     <!-- Art Section -->
-    <section class="art-section">
+    <section id="art-section" class="art-section">
         <div class="container">
             <h2 class="section-title">Créations Artistiques</h2>
             
@@ -493,7 +545,7 @@
     </section>
 
     <!-- Skills Showcase -->
-    <section class="skills-showcase">
+    <section id="skills-showcase" class="skills-showcase">
         <div class="container">
             <h2 class="section-title">Compétences 3D</h2>
             <div class="skills-grid-detailed">
@@ -538,7 +590,7 @@
     </section>
 
     <!-- External Links -->
-    <section class="external-links-section">
+    <section id="external-links-section" class="external-links-section">
         <div class="container">
             <h2 class="section-title">Retrouvez mes créations</h2>
             <div class="external-links-grid">
@@ -575,6 +627,7 @@
 
     <script src="js/common.js"></script>
     <script src="js/creations-3d.js"></script>
+    <script src="js/table-of-contents.js"></script>
 </body>
 </html>
 
