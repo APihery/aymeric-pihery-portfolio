@@ -263,7 +263,13 @@ function applyTheme(theme) {
     // Update theme toggle icon
     const themeToggle = document.querySelector('.theme-toggle-slider');
     if (themeToggle) {
-        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        if (themeIcon) {
+            themeIcon.src = theme === 'dark' 
+                ? 'ressources/logo/Bright.svg' 
+                : 'ressources/logo/Dark.svg';
+            themeIcon.alt = theme === 'dark' ? 'Light theme' : 'Dark theme';
+        }
     }
 }
 

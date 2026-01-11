@@ -90,6 +90,76 @@ body {
 }
 
 /* ============================================
+   SVG ICONS - ADAPTATIVE COLORS
+   ============================================ */
+
+/* SVG icons that adapt to theme color */
+.svg-icon {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    transition: all var(--transition-base);
+    object-fit: contain;
+    /* Convert black SVG to current text color */
+    filter: brightness(0) saturate(100%);
+    opacity: 0.8;
+}
+
+/* Small inline SVG icons (for buttons) */
+.svg-icon-inline {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    transition: all var(--transition-base);
+    vertical-align: middle;
+    object-fit: contain;
+    /* Convert black SVG to current text color */
+    filter: brightness(0) saturate(100%);
+    opacity: 1;
+}
+
+/* Apply current theme color to SVG icons */
+[data-theme="light"] .svg-icon,
+[data-theme="light"] .svg-icon-inline {
+    /* Black SVG for light theme */
+    filter: brightness(0) saturate(100%);
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .svg-icon,
+[data-theme="dark"] .svg-icon-inline {
+    /* White SVG for dark theme */
+    filter: brightness(0) saturate(100%) invert(1);
+    opacity: 0.9;
+}
+
+/* SVG icons in colored contexts - make them white */
+.link-card:hover .svg-icon,
+.external-link-card:hover .svg-icon,
+.intro-link-btn .svg-icon-inline {
+    filter: brightness(0) saturate(100%) invert(1);
+    opacity: 1;
+}
+
+/* Card icons - larger size */
+.card-icon .svg-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Skill icons - larger size */
+.skill-icon .svg-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* External link icons */
+.external-link-icon .svg-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+/* ============================================
    NAVIGATION
    ============================================ */
 
@@ -159,6 +229,26 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 0.875rem;
+}
+
+.theme-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    object-fit: contain;
+    transition: filter var(--transition-base);
+    /* Both SVGs are black (#000000), so convert to black first */
+    filter: brightness(0) saturate(100%);
+}
+
+/* Light theme: show icon as black (Dark.svg) */
+html[data-theme="light"] .theme-toggle-slider .theme-icon {
+    filter: brightness(0) saturate(100%);
+}
+
+/* Dark theme: show icon as white (Bright.svg) */
+html[data-theme="dark"] .theme-toggle-slider .theme-icon {
+    filter: brightness(0) saturate(100%) invert(1);
 }
 
 [data-theme="dark"] .theme-toggle {

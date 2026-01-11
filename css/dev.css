@@ -306,6 +306,14 @@
 .github-icon {
     font-size: 4rem;
     margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-icon .svg-icon {
+    width: 4rem;
+    height: 4rem;
 }
 
 .github-card h3 {

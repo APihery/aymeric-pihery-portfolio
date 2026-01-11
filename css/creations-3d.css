@@ -367,6 +367,15 @@
 
 .youtube-icon {
     font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtube-icon .svg-icon-inline {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: brightness(0) saturate(100%) invert(1);
 }
 
 .project-images-gallery {
@@ -550,6 +559,55 @@
     left: 0;
     color: var(--terracotta);
     font-weight: bold;
+}
+
+/* ============================================
+   TOOLS SECTION
+   ============================================ */
+
+.tools-section {
+    background: var(--bg-primary);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tool-card {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: 1rem;
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tool-icon {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-icon .svg-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.tool-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.tool-card p {
+    color: var(--text-secondary);
 }
 
 /* ============================================

@@ -163,6 +163,18 @@
     box-shadow: var(--shadow-md);
 }
 
+.tool-icon {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-icon .svg-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
 .tool-card h3 {
     font-size: 1.5rem;
     margin-bottom: var(--spacing-sm);

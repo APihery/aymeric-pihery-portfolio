@@ -67,7 +67,7 @@
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
                 <button class="theme-toggle" aria-label="Toggle theme">
-                    <span class="theme-toggle-slider">🌙</span>
+                    <span class="theme-toggle-slider"><img src="ressources/logo/Dark.svg" alt="Dark theme" class="theme-icon"></span>
                 </button>
             </div>
             <div class="hamburger">
@@ -124,6 +124,12 @@
                         <div class="toc-point">
                             <div class="toc-dot"></div>
                             <div class="toc-label">Compétences 3D</div>
+                        </div>
+                    </div>
+                    <div class="toc-segment" data-target="tools-section">
+                        <div class="toc-point">
+                            <div class="toc-dot"></div>
+                            <div class="toc-label">Outils & Logiciels</div>
                         </div>
                     </div>
                     <div class="toc-segment" data-target="external-links-section">
@@ -257,7 +263,7 @@
                 <div class="project-video-container">
                     <div class="video-wrapper">
                         <a href="https://youtu.be/HivPK9tYkA4" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                            <span class="youtube-icon">▶</span>
+                            <span class="youtube-icon"><img src="ressources/logo/Play_Button.svg" alt="Play" class="svg-icon-inline"></span>
                             <span>Regarder la vidéo sur YouTube</span>
                         </a>
                     </div>
@@ -311,7 +317,7 @@
                 <div class="project-video-container">
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/shorts/iJkc8hJ_vMk" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                            <span class="youtube-icon">▶</span>
+                            <span class="youtube-icon"><img src="ressources/logo/Play_Button.svg" alt="Play" class="svg-icon-inline"></span>
                             <span>Regarder la vidéo sur YouTube</span>
                         </a>
                     </div>
@@ -362,7 +368,7 @@
                 <div class="project-video-container">
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/@Aymeric_Pihery/shorts" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                            <span class="youtube-icon">▶</span>
+                            <span class="youtube-icon"><img src="ressources/logo/Play_Button.svg" alt="Play" class="svg-icon-inline"></span>
                             <span>Voir les animations sur YouTube Shorts</span>
                         </a>
                     </div>
@@ -589,23 +595,68 @@
         </div>
     </section>
 
+    <!-- Tools Section -->
+    <section id="tools-section" class="tools-section">
+        <div class="container">
+            <h2 class="section-title">Outils & Logiciels</h2>
+            <div class="tools-grid">
+                <div class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <meta itemprop="name" content="Blender">
+                    <meta itemprop="description" content="Modélisation 3D, animation et rendu professionnel">
+                    <meta itemprop="applicationCategory" content="3DSoftware">
+                    <meta itemprop="operatingSystem" content="Windows, macOS, Linux">
+                    <div class="tool-icon"><img src="ressources/logo/blender_logo.svg" alt="Blender" class="svg-icon"></div>
+                    <h3 itemprop="name">Blender</h3>
+                    <p itemprop="description">Modélisation 3D, animation et rendu professionnel</p>
+                </div>
+                <div class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <meta itemprop="name" content="Adobe Substance 3D Painter">
+                    <meta itemprop="description" content="Texturing 3D professionnel et peinture de matériaux">
+                    <meta itemprop="applicationCategory" content="3DSoftware">
+                    <meta itemprop="operatingSystem" content="Windows, macOS, Linux">
+                    <div class="tool-icon"><img src="ressources/logo/SubstancePainter_Logo.svg" alt="Substance Painter" class="svg-icon"></div>
+                    <h3 itemprop="name">Substance Painter 3D</h3>
+                    <p itemprop="description">Texturing 3D professionnel et peinture de matériaux</p>
+                </div>
+                <div class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <meta itemprop="name" content="Unity">
+                    <meta itemprop="description" content="Moteur de jeu et moteur 3D temps réel">
+                    <meta itemprop="applicationCategory" content="GameEngine">
+                    <meta itemprop="operatingSystem" content="Windows, macOS, Linux">
+                    <div class="tool-icon"><img src="ressources/logo/Unity_Logo.svg" alt="Unity" class="svg-icon"></div>
+                    <h3 itemprop="name">Unity</h3>
+                    <p itemprop="description">Moteur de jeu et moteur 3D temps réel</p>
+                </div>
+                <div class="tool-card" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <meta itemprop="name" content="Unreal Engine 5">
+                    <meta itemprop="description" content="Moteur de jeu AAA et rendu 3D temps réel avancé">
+                    <meta itemprop="applicationCategory" content="GameEngine">
+                    <meta itemprop="operatingSystem" content="Windows, macOS, Linux">
+                    <div class="tool-icon"><img src="ressources/logo/UnrealEngine_Logo.svg" alt="Unreal Engine 5" class="svg-icon"></div>
+                    <h3 itemprop="name">Unreal Engine 5</h3>
+                    <p itemprop="description">Moteur de jeu AAA et rendu 3D temps réel avancé</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- External Links -->
     <section id="external-links-section" class="external-links-section">
         <div class="container">
             <h2 class="section-title">Retrouvez mes créations</h2>
             <div class="external-links-grid">
                 <a href="https://www.deviantart.com/aymericpihery" target="_blank" class="external-link-card">
-                    <div class="external-link-icon">🎨</div>
+                    <div class="external-link-icon"><img src="ressources/logo/devianart.svg" alt="DeviantArt" class="svg-icon"></div>
                     <h3>DeviantArt</h3>
                     <p>Portfolio complet de mes créations</p>
                 </a>
                 <a href="https://displate.com/aymericpihery" target="_blank" class="external-link-card">
-                    <div class="external-link-icon">🖼️</div>
+                    <div class="external-link-icon"><img src="ressources/logo/displate.svg" alt="Displate" class="svg-icon"></div>
                     <h3>Displate</h3>
                     <p>Boutique d'art - Tableaux disponibles</p>
                 </a>
                 <a href="https://www.instagram.com/aymeric_pihery/" target="_blank" class="external-link-card">
-                    <div class="external-link-icon">📸</div>
+                    <div class="external-link-icon"><img src="ressources/logo/instagram.svg" alt="Instagram" class="svg-icon"></div>
                     <h3>Instagram</h3>
                     <p>Créations visuelles et behind-the-scenes</p>
                 </a>
