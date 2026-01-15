@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineContainer = document.querySelector('.interactive-timeline');
     const timelineSegments = document.querySelectorAll('.timeline-segment');
     
-    // Timeline spans from 2021-01 to 2025-12 (60 months)
-    const totalMonths = 60;
+    // Timeline spans from 2017-01 to 2026-02 (122 months)
+    const totalMonths = 122;
     
     // Position and size segments based on duration
     timelineSegments.forEach(segment => {
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add graduation bars (every 6 months = every semester)
     const graduationsContainer = document.querySelector('.timeline-graduations');
     if (graduationsContainer) {
-        // Year months: 0, 12, 24, 36, 48 (2021 to 2025)
-        const yearMonths = [0, 12, 24, 36, 48];
+        // Year months: 0, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120 (2017 to 2026)
+        const yearMonths = [0, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120];
         
         for (let month = 0; month <= totalMonths; month += 6) {
             const percent = (month / totalMonths) * 100;
@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         timeMarkersContainer.className = 'timeline-time-markers';
         timelineLine.parentElement.appendChild(timeMarkersContainer);
         
-        // Timeline starts at 2021-01 (month 0) and ends at 2025-12 (month 59, which is month 60 in 0-indexed)
-        // Years: 2021 (month 0), 2022 (month 12), 2023 (month 24), 2024 (month 36), 2025 (month 48)
-        const yearMonths = [0, 12, 24, 36, 48]; // 2021 to 2025 start
-        const yearLabels = ['2021', '2022', '2023', '2024', '2025'];
+        // Timeline starts at 2017-01 (month 0) and ends at 2026-02 (month 121)
+        // Years: 2017 (month 0), 2018 (month 12), 2019 (month 24), 2020 (month 36), 2021 (month 48), 2022 (month 60), 2023 (month 72), 2024 (month 84), 2025 (month 96), 2026 (month 108)
+        const yearMonths = [0, 12, 24, 36, 48, 60, 72, 84, 96, 108]; // 2017 to 2026 start
+        const yearLabels = ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
         
         yearMonths.forEach((month, index) => {
             const percent = (month / totalMonths) * 100;
