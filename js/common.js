@@ -49,7 +49,13 @@ const translations = {
         },
         about: {
             title: 'Parcours Professionnel',
-            subtitle: 'Un aperçu détaillé de mon expérience et de mes compétences'
+            subtitle: 'Un aperçu détaillé de mon expérience et de mes compétences',
+            skills_title: 'Compétences',
+            programming_languages: 'Langages de Programmation',
+            frameworks: 'Frameworks & Technologies',
+            tools_3d: 'Outils 3D & Création',
+            functional: 'Compétences Fonctionnelles',
+            education: 'Formations & Certifications'
         },
         dev: {
             title: 'Projets de Développement',
@@ -200,14 +206,6 @@ const translations = {
             davinci_desc: 'Color grading professionnel et étalonnage avancé',
             blender_video_desc: 'Modélisation 3D, animation et rendu pour projets vidéo',
             inkscape_video_desc: 'Édition vectorielle et création graphique'
-        },
-        about: {
-            skills_title: 'Compétences',
-            programming_languages: 'Langages de Programmation',
-            frameworks: 'Frameworks & Technologies',
-            tools_3d: 'Outils 3D & Création',
-            functional: 'Compétences Fonctionnelles',
-            education: 'Formations & Certifications'
         }
     },
     en: {
@@ -256,7 +254,13 @@ const translations = {
         },
         about: {
             title: 'Professional Career',
-            subtitle: 'A detailed overview of my experience and skills'
+            subtitle: 'A detailed overview of my experience and skills',
+            skills_title: 'Skills',
+            programming_languages: 'Programming Languages',
+            frameworks: 'Frameworks & Technologies',
+            tools_3d: '3D Tools & Creation',
+            functional: 'Functional Skills',
+            education: 'Education & Certifications'
         },
         dev: {
             title: 'Development Projects',
@@ -413,14 +417,6 @@ const translations = {
             davinci_desc: 'Professional color grading and advanced color correction',
             blender_video_desc: '3D modeling, animation and rendering for video projects',
             inkscape_video_desc: 'Vector editing and graphic creation'
-        },
-        about: {
-            skills_title: 'Skills',
-            programming_languages: 'Programming Languages',
-            frameworks: 'Frameworks & Technologies',
-            tools_3d: '3D Tools & Creation',
-            functional: 'Functional Skills',
-            education: 'Education & Certifications'
         }
     }
 };
