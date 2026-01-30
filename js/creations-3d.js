@@ -50,18 +50,17 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); /* Stop observing to avoid flicker on hover */
         }
     });
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.portfolio-card, .video-thumbnail-item');
-    
+    const animateElements = document.querySelectorAll('.portfolio-card, .pro-video-card');
+
     animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.classList.remove('visible');
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });

@@ -138,48 +138,67 @@
 }
 
 /* ============================================
-   PROFESSIONAL VIDEOS SECTION
+   PROFESSIONAL VIDEOS SECTION (refactor complet)
+   Classes dédiées .pro-videos-* / .pro-video-card* uniquement
    ============================================ */
 
 .professional-videos-section {
     background: var(--bg-primary);
     padding: var(--spacing-2xl) 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 1400px;
+.pro-videos-inner {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    box-sizing: border-box;
 }
 
-.video-thumbnail-item {
+.pro-videos-inner .section-title {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Grille 3 colonnes égales - aucune autre règle ne cible .pro-videos-grid */
+.pro-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pro-video-card {
+    min-width: 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.video-thumbnail-item.visible {
+.pro-video-card.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.video-thumbnail-link {
+.pro-video-card__link {
     display: block;
     text-decoration: none;
     color: var(--text-primary);
-    transition: transform var(--transition-base);
+    transition: transform 0.25s ease, color 0.2s ease;
 }
 
-.video-thumbnail-link:hover {
-    transform: translateY(-5px);
+.pro-video-card__link:hover {
+    transform: translateY(-4px);
+    color: var(--terracotta);
 }
 
-.video-thumbnail-container {
+/* Vignette 16:9 */
+.pro-video-card__thumb {
+    display: block;
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     overflow: hidden;
     border-radius: 0.75rem;
     background: var(--bg-secondary);
@@ -187,11 +206,11 @@
     transition: box-shadow var(--transition-base);
 }
 
-.video-thumbnail-container:hover {
+.pro-video-card__link:hover .pro-video-card__thumb {
     box-shadow: var(--shadow-lg);
 }
 
-.video-thumbnail-container img {
+.pro-video-card__thumb img {
     position: absolute;
     top: 0;
     left: 0;
@@ -201,16 +220,17 @@
     transition: transform var(--transition-base);
 }
 
-.video-thumbnail-link:hover .video-thumbnail-container img {
+.pro-video-card__link:hover .pro-video-card__thumb img {
     transform: scale(1.05);
 }
 
-.video-play-overlay {
+/* Overlay play */
+.pro-video-card__play {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,41 +239,43 @@
     transition: opacity var(--transition-base), background var(--transition-base);
 }
 
-.video-thumbnail-link:hover .video-play-overlay {
+.pro-video-card__link:hover .pro-video-card__play {
     opacity: 1;
     background: rgba(0, 0, 0, 0.4);
 }
 
-.play-button {
+.pro-video-card__play svg {
     width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
     transition: transform var(--transition-base);
 }
 
-.video-thumbnail-link:hover .play-button {
+.pro-video-card__link:hover .pro-video-card__play svg {
     transform: scale(1.1);
 }
 
-.play-button svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-}
-
-.video-title {
+/* Titre toujours visible sous chaque carte */
+.pro-video-card__title {
+    display: block;
+    margin-top: 0.75rem;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--text-primary);
-    margin-top: var(--spacing-md);
     text-align: center;
-    transition: color var(--transition-base);
+    color: inherit;
+    transition: color 0.2s ease;
 }
 
-.video-thumbnail-link:hover .video-title {
-    color: var(--terracotta);
+@media (max-width: 1100px) {
+    .pro-videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .pro-videos-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
