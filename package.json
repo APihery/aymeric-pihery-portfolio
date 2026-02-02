@@ -1,0 +1,13 @@
+{
+  "name": "aymeric-pihery-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio professionnel - Créations 3D, développement, retouche image, colorimétrie vidéo",
+  "private": true,
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
+    "optimize-images:compress": "node scripts/optimize-images.js --compress"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
